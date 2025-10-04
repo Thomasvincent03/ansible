@@ -1,0 +1,3 @@
+I have generated an Ansible configuration file using below commands and that file contains lists of all default settings.
+
+Command ==> ansible-config init --disabled > ansible.cfg 
