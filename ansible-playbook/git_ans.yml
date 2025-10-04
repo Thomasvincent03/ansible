@@ -1,0 +1,15 @@
+- name: Install required packages
+  hosts: local
+  become: yes
+  tasks:
+    - name: Install/Uninstall git
+      ansible.builtin.yum:
+        name: git
+        state: "{{ git_state }}"
+
+    - name: Remove binary file of git
+      ansible.builtin.file:
+        path: /usr/bin/git
+        state: absent
+        force: yes
+      when: git_state == "absent"
