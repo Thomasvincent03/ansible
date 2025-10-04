@@ -1,0 +1,11 @@
+This git_ans.yml file to perfrom Install/Uninstall the git package using the command line input.
+
+Command line input ==> 
+1) ansible-playbook -i inventory git_ans.yml --extra-vars "git_state=present"
+2) ansible-playbook -i inventory git_ans.yml --extra-vars "git_state=absent"
+
+In the 1st case, the second part of ansible playbook won't run. 
+
+In the 2nd case, the second part of ansible playbook will run.
+
+While removing/Uninstalling the packages via ansible, the binary file is not deleteing. So I have deleted the file using ansible commands, if the state is absent.
