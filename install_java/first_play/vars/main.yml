@@ -1,0 +1,7 @@
+---
+# vars file for first_play
+jhome: /opt/ibm
+package: ibm-java-x86_64-sdk-8.0-8.50.x86_64.rpm
+java_path: /opt/ibm/java-x86_64-80/bin/java
+java_priority: 2
+profile_file: /etc/profile.d/custom.sh
