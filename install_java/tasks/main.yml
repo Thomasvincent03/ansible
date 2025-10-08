@@ -16,6 +16,7 @@
   ansible.builtin.dnf:
     name: "{{jhome}}/{{package}}"
     state: present
+    disable_gpg_check: yes
 
 - name: Install and update the java alternatives
   ansible.builtin.shell: |
@@ -26,6 +27,8 @@
 - name: Update profile file
   ansible.builtin.blockinfile:
     path: "{{profile_file}}"
+    create: yes
+    mode: '0644'
     block: |
       export JAVA_HOME={{jhome}}
       export PATH=$PATH:$JAVA_HOME/java-x86_64-80/bin
