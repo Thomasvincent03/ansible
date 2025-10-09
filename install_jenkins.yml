@@ -1,0 +1,6 @@
+---
+- name: Install Jenkins Plybook
+  hosts: server1
+  become: yes
+  roles:
+    - install_jenkins
