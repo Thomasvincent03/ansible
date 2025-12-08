@@ -10,3 +10,9 @@
 - name: install docker
   ansible.builtin.shell: |
     sudo sh test-docker.sh
+
+- name: Delete Docker script
+  ansible.builtin.file: 
+    path: test-docker.sh
+    state: absent
+
