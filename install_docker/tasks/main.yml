@@ -1,0 +1,12 @@
+---
+- name: Uninstall the existing docker
+  ansible.builtin.shell: |
+    sudo apt remove $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
+
+- name: Download the Docker script
+  ansible.builtin.shell: |
+    curl -fsSL https://test.docker.com -o test-docker.sh
+
+- name: install docker
+  ansible.builtin.shell: |
+    sudo sh test-docker.sh

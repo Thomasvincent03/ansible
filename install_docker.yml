@@ -1,0 +1,6 @@
+---
+- name: Install Docker in Uduntu
+  hosts: localhost
+  become: yes
+  roles:
+  - install_docker
